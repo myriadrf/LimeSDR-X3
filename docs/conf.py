@@ -19,11 +19,11 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'PCIe 5GRadio v3.0 Board'
-copyright = '2021, MyriadRF Contributors'
+copyright = '2022, MyriadRF Contributors'
 author = 'Lime Microsystems'
 
 # The full version, including alpha/beta/rc tags
-release = '21.08'
+release = '22.02'
 
 highlight_language = 'console'
 
