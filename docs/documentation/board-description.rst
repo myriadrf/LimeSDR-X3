@@ -1,13 +1,13 @@
 Board Description
 =================
 
-The PCIe 5GRadio development board provides a hardware platform for developing and prototyping high-performance and logic-intensive digital and RF designs using and Xilinx FPGA and Lime Microsystems transceiver. 
+The LimeSDR X3 development board provides a hardware platform for developing and prototyping high-performance and logic-intensive digital and RF designs using and Xilinx FPGA and Lime Microsystems transceiver. 
 For more information on the following topics, refer to the respective documents:
 
 * `Xilinx Artix-7 FPGA family, refer to Xilinx documentation <https://www.xilinx.com/products/silicon-devices/fpga/artix-7.html>`_
 * `Lime Microsystems LMS7002M transceiver resources <https://limemicro.com/technology/lms7002m/>`_
 
-PCIe 5GRadio board features:
+LimeSDR X3 board features:
 
 * RF transceivers
 
@@ -72,27 +72,27 @@ PCIe 5GRadio board features:
 * Board Size without connectors 232,5mm x 106,7mm (9.15” x 4.2”)
 
 
-PCIe 5GRadio board overview
+LimeSDR X3 board overview
 ---------------------------
 
-The heart of the PCIe 5GRadio board is Xilinx Artix-7 XC7A200T. Its main function is to transfer digital data between the PC and the board via the PCIe interface. The block diagram for PCIe 5GRadio v3.0 board is as shown in Figure 1.
+The heart of the LimeSDR X3 board is Xilinx Artix-7 XC7A200T. Its main function is to transfer digital data between the PC and the board via the PCIe interface. The block diagram for LimeSDR X3 v1.0 board is as shown in Figure 1.
 
 .. figure:: images/PCIe_5GRadio_3v0_diagrams_r1_BD.png
   :width: 600
   
-  Figure 1. PCIe 5GRadio v3.0 Board Block Diagram
+  Figure 1. LimeSDR X3 v1.0 Board Block Diagram
 
-PCIe 5GRadio v3.0 board view with highlighted major components and connectors is presented in Figure 2 and Figure 3. Lime Microsystems LMS7002M RF transceivers, Xilinx Artix-7 FPGA and other main components are placed on the top side of the board. There are three connector types – data and debugging (PCIe x4, PMOD and JTAG), coaxial (clock input/output, GNSS antenna, RF transmit and receive ports), miscellaneous (fan headers). 
+LimeSDR X3 v1.0 board view with highlighted major components and connectors is presented in Figure 2 and Figure 3. Lime Microsystems LMS7002M RF transceivers, Xilinx Artix-7 FPGA and other main components are placed on the top side of the board. There are three connector types – data and debugging (PCIe x4, PMOD and JTAG), coaxial (clock input/output, GNSS antenna, RF transmit and receive ports), miscellaneous (fan headers). 
 
 .. figure:: images/PCIe_5GRadio_v3.0_top_components.png
   :width: 600
   
-  Figure 2. PCIe 5GRadio v3.0 top side components and connectors
+  Figure 2. LimeSDR X3 v1.0 top side components and connectors
   
 .. figure:: images/PCIe_5GRadio_v3.0_bot_components.png
   :width: 600
   
-  Figure 3. PCIe 5GRadio v3.0 bottom side components and connectors
+  Figure 3. LimeSDR X3 v1.0 bottom side components and connectors
   
 Board components description is listed in Table 1 and Table 2.
 
@@ -270,20 +270,20 @@ Board components description is listed in Table 1 and Table 2.
    +-----------------------------------------------------+------------------+---------------------------------------------------------------------------------------+
    
    
-PCIe 5GRadio board architecture
+LimeSDR X3 board architecture
 -------------------------------
 
-More detailed description of PCIe 5GRadio board components and interconnections is given in the sections of this chapter.
+More detailed description of LimeSDR X3 board components and interconnections is given in the sections of this chapter.
 
 RF path
 ~~~~~~~
 
-PCIe 5Gradio board has three LMS7002 transceivers and various other RF components like matching networks, RF switches, power amplifiers, attenuators etc. The complete RF structure is as shown in Figure 4.
+LimeSDR X3 board has three LMS7002 transceivers and various other RF components like matching networks, RF switches, power amplifiers, attenuators etc. The complete RF structure is as shown in Figure 4.
 
 .. figure:: images/PCIe_5GRadio_3v0_diagrams_r1_RF.png
   :width: 600
   
-  Figure 4. PCIe 5GRadio v3.0 RF block diagram
+  Figure 4. LimeSDR X3 v1.0 RF block diagram
 
 RF transceiver #1 RF path is the simplest. Each TX and RX channel has two frequency-matched channels that can be selected using a 2:1 RF switches. In addition, each TX path has an RF amplifier after band selection. This gives RF transceiver #1 a MIMO system (2x2) with selectable bands in full duplex configuration.
 
@@ -1132,7 +1132,7 @@ Pins 6 and 12 of each PMOD connector provides output voltage of 3.3V (default) o
 Indication LEDs
 ~~~~~~~~~~~~~~~
 
-PCIe 5GRadio board features six dual color (red and green (RG)) indication LEDs. Most of LEDs are connected to FPGA and their function may be programmed according to the user requirements. Default function of LEDs and related information is listed in Table 15.
+LimeSDR X3 board features six dual color (red and green (RG)) indication LEDs. Most of LEDs are connected to FPGA and their function may be programmed according to the user requirements. Default function of LEDs and related information is listed in Table 15.
 
 .. table:: Table 15. Default LED functions
 
@@ -1171,7 +1171,7 @@ Four bit DIP switch SW1 is connected to FPGA and may be used to implement additi
 .. figure:: images/PCIe_5GRadio_v3.0_DIPSW.png
   :width: 600
   
-  Figure 6. PCIe 5GRadio four poles slide switch
+  Figure 6. LimeSDR X3 four poles slide switch
 
 Switch and FPGA interconnection is as shown in Table 16.
 
@@ -1195,7 +1195,7 @@ Switch and FPGA interconnection is as shown in Table 16.
 Temperature sensor and fan control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-PCIe 5GRadio board has integrated temperature sensor which can be used to monitor board temperature through I2C interface.
+LimeSDR X3 board has integrated temperature sensor which can be used to monitor board temperature through I2C interface.
 
 Sensor has over temperature shutdown (OS) output connected to FPGA which can be used to take actions to reduce board temperature when it rises above set limits. For example, fan will be turned on if board will heat up to 45°C and FAN will be turned off if board will cool down to 35°C as shown in Figure 7. These values can be modified.
 
@@ -1229,7 +1229,7 @@ Fan voltage can be selected between 3.3V, 5V (default) and 12V via R186, R187 an
 Clock Distribution 
 ~~~~~~~~~~~~~~~~~~
 
-PCIe 5GRadio board has onboard VCOCXO U7475LF (XO3 – 30.72 MHz) (default), VCTCXO E6245LF, E5280LF (XO4, XO5 - 30.7 MHz), ASVTX-12-A-38.400MHZ-H10-T (XO7 – 38.4 MHz) and RTX5032A (XO6 – 40 MHz) oscillators that can be used as source for clock buffer LMK00101 and clock generator CDCM6208. By default XO3 is connected to the clock buffer primary reference input. All these XOs can be tuned by 16-bit DAC (IC77), phase detector (IC76) or by FPGA using GPIO in PWM mode.
+LimeSDR X3 board has onboard VCOCXO U7475LF (XO3 – 30.72 MHz) (default), VCTCXO E6245LF, E5280LF (XO4, XO5 - 30.7 MHz), ASVTX-12-A-38.400MHZ-H10-T (XO7 – 38.4 MHz) and RTX5032A (XO6 – 40 MHz) oscillators that can be used as source for clock buffer LMK00101 and clock generator CDCM6208. By default XO3 is connected to the clock buffer primary reference input. All these XOs can be tuned by 16-bit DAC (IC77), phase detector (IC76) or by FPGA using GPIO in PWM mode.
 
 Using header J30 connector is possible to connect external reference clock and PPS signal from another board. Header J31 can be used to feed reference clock and PPS signal to another board. Headers J30 and J31 can be used to synchronize several boards by daisy chaining each other.
 
@@ -1244,9 +1244,9 @@ Clock distribution block diagram is as shown in Figure 9.
 .. figure:: images/PCIe_5GRadio_3v0_diagrams_r1_clock.png
   :width: 600
   
-  Figure 9. PCIe 5GRadio board clock distribution block diagram
+  Figure 9. LimeSDR X3 board clock distribution block diagram
 
-.. table:: Table 18. PCIe 5GRadio clock pins
+.. table:: Table 18. LimeSDR X3 clock pins
 
    +---------------------------+---------------------------+------------------+--------------+---------------------------+
    | **Source**                | **Schematic signal name** | **I/O standard** | **FPGA pin** | **Description**           |
@@ -1292,13 +1292,13 @@ Clock distribution block diagram is as shown in Figure 9.
 Power Distribution 
 ~~~~~~~~~~~~~~~~~~
 
-PCIe 5GRadio board by default must be powered from 12V 6 pin PCIe power connector (J36) due to high power consumption. An alternative 12V supply connection is possible from the PCI connector (disabled by default) if a power consumption of less than 25W is guaranteed.
+LimeSDR X3 board by default must be powered from 12V 6 pin PCIe power connector (J36) due to high power consumption. An alternative 12V supply connection is possible from the PCI connector (disabled by default) if a power consumption of less than 25W is guaranteed.
 
 Header J34 (0.2” pitch) and J35 (0.1” pitch) can be used for powering external 12V devices.
 
-PCIe 5GRadio board power distribution diagram is as shown in Figure 10.
+LimeSDR X3 board power distribution diagram is as shown in Figure 10.
 
 .. figure:: images/PCIe_5GRadio_3v0_diagrams_r1_power.png
   :width: 600
   
-  Figure 10. PCIe 5GRadio board power distribution diagram
+  Figure 10. LimeSDR X3 board power distribution diagram

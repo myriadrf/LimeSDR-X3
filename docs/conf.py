@@ -18,12 +18,12 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'PCIe 5GRadio v3.0 Board'
-copyright = '2022, MyriadRF Contributors'
+project = 'LimeSDR X3 v1.0 Board'
+copyright = '2023, MyriadRF Contributors'
 author = 'Lime Microsystems'
 
 # The full version, including alpha/beta/rc tags
-release = '22.02'
+release = '23.01'
 
 highlight_language = 'console'
 
@@ -58,7 +58,7 @@ html_last_updated_fmt = '%b %d, %Y'
 html_context = {
     'display_github': True,
     'github_user': 'myriadrf',
-    'github_repo': 'LimeSDR-PCIe-5G',
+    'github_repo': 'LimeSDR-X3',
     'github_version': 'master/' 
 }
 
