@@ -3,7 +3,7 @@
    :hidden:
 
    Introduction <self>
-   documentation/index
+   documentation/board-description
 
 Introduction
 ============
