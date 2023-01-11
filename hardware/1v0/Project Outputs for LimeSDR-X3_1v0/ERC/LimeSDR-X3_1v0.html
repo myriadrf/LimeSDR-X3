@@ -1,0 +1,1197 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+        td, th {
+            padding: 0.5em;
+            text-align : left;
+        }
+        th {
+            background-color : #EEEEEE;
+        
+        }
+        th.column1, td.column1 {
+            width : 10em;
+        }
+
+        th.column2, td.column2 {
+            width : 30em;
+        }
+
+        table {
+            width : 100%;
+            font-size: 0.9em;
+        }
+
+		.header_holder {
+			Width = 100%;
+			border = 0px solid green;
+			padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+        }
+
+        .front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+        }
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+        .total_column1, .total_column {
+            font-weight : bold;
+        }
+        .total_column1 {
+            text-align : left;
+        }
+        .warning, .error {
+            color : red;
+            font-weight : bold;
+        }
+        tr.onmouseout_odd {
+            background-color : #white;
+        }
+        tr.onmouseout_even { 
+            background-color : #FAFAFA;
+        }
+        tr.onmouseover_odd, tr.onmouseover_even { 
+            background-color : #EEEEEE;
+        } 
+        a:link, a:visited, .q a:link,.q a:active,.q {
+            color: #21489e; 
+        }
+        a:link.callback, a:visited.callback { 
+            color: #21489e;
+        }
+        p.contents_level1 {
+            font-weight : bold;
+            font-size : 110%;
+            margin : 0.5em;
+        }
+        p.contents_level2 {
+            position : relative;
+            left : 20px;
+            margin : 0.5em;
+        }
+    </style><script type="text/javascript">
+        function coordToMils(coord) {
+            var number = coord / 10000;
+            
+            if (number != number.toFixed(3))
+                number = number.toFixed(3);
+            
+            return number + 'mil'
+        }
+
+        function coordToMM(coord) {
+            var number = 0.0254 * coord / 10000;
+            
+            if (number != number.toFixed(4))
+                number = number.toFixed(4);
+            
+            return number + 'mm'
+        }
+    
+        function convertCoord(coordNode, units) {
+            for (var i = 0; i < coordNode.childNodes.length; i++) {
+                coordNode.removeChild(coordNode.childNodes[i]);
+            }
+
+            var coord = coordNode.getAttribute('value');
+            if (coord != null) {
+                if (units == 'mm') {
+                    textNode = document.createTextNode(coordToMM(coord));
+                    coordNode.appendChild(textNode);
+                } else if (units == 'mil') {
+                    textNode = document.createTextNode(coordToMils(coord));
+                    coordNode.appendChild(textNode);
+                }
+            }
+        }
+    
+        function convertUnits(unitNode, units) {
+            for (var i = 0; i < unitNode.childNodes.length; i++) {
+                unitNode.removeChild(unitNode.childNodes[i]);
+            }
+        
+            textNode = document.createTextNode(units); 
+            unitNode.appendChild(textNode);
+        }
+    
+        function changeUnits(radio_input, units) {
+            if (radio_input.checked) {
+            
+                var elements = document.getElementsByName('coordinate');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertCoord(elements[i], units);
+                    }
+                }
+    
+                var elements = document.getElementsByName('units');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertUnits(elements[i], units);
+                    }
+                }
+            }
+        }
+    </script></head>
+<body onload=""><img ALT="Altium" src="
+            file://C:\Users\Public\Documents\Altium\AD19\Templates\AD_logo.png
+        "><h1>Electrical Rule Check Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2022-12-19</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:25:31</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///E:\Saniok\Lime Micro\Lime PCBs\LimeSDR-X3_1v0\Altium designer design files\Project Outputs for LimeSDR-X3_1v0\ERC\LimeSDR-X3_1v0.html" class="file"><acronym title="E:\Saniok\Lime Micro\Lime PCBs\LimeSDR-X3_1v0\Altium designer design files\Project Outputs for LimeSDR-X3_1v0\ERC\LimeSDR-X3_1v0.html">E:\Saniok\Lime Micro\Lime PCBs\LimeSDR-X3_1v0\Altium designer design files\Project Outputs for LimeSDR-X3_1v0\ERC\LimeSDR-X3_1v0.html</acronym></a></td>
+</tr>
+</table><a name="IDJ4CQZJBF40VFDHAICFNRZKLBKN0KQENTKEQKTBQNLWFUBA3ZWI"><table>
+<tr>
+<th class="column1">Class</th>
+<th class="column2">Document</th>
+<th class="column3">Message</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">CDCM_LMS2_BB_DAC1_REFC_N contains IO Pin and Output Pin objects (Pin IC35-N2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">CDCM_LMS2_BB_DAC1_REFC_P contains IO Pin and Output Pin objects (Pin IC35-N3)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">CDCM_LMS2_BB_DAC2_REFC_N contains IO Pin and Output Pin objects (Pin IC35-F5)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">CDCM_LMS2_BB_DAC2_REFC_P contains IO Pin and Output Pin objects (Pin IC35-G5)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">CDCM_STATUS0 contains IO Pin and Output Pin objects (Pin IC35-AB16)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">GND contains IO Pin and Output Pin objects (Pin IC35-L19,Pin IC75-PAD,Pin IC74-PAD,Pin IC73-PAD,Pin IC35-V24,Pin IC35-W18,Pin IC35-Y22)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">GND contains IO Pin and Power Pin objects (Pin J24-1,Pin LED5-1,Pin IC85-3,Pin J24-9,Pin J24-10,Pin J24-11,Pin J24-14,Pin IC53-15,Pin IC51-15,Pin IC49-15,Pin IC47-15,Pin IC53-16,Pin IC51-16,Pin IC49-16,Pin IC47-16,Pin J24-17,Pin IC52-17,Pin IC50-17,Pin IC48-17,Pin IC46-17,Pin IC52-18,Pin IC50-18,Pin IC48-18,Pin IC46-18,Pin J24-20,Pin IC53-21,Pin IC52-21,Pin IC51-21,Pin IC50-21,Pin IC49-21,Pin IC48-21,Pin IC47-21,Pin IC46-21,Pin IC53-22,Pin IC51-22,Pin IC49-22,Pin IC47-22,Pin IC52-24,Pin IC50-24,Pin IC48-24,Pin IC46-24,Pin IC52-27,Pin IC50-27,Pin IC48-27,Pin IC46-27,Pin IC52-28,Pin IC50-28,Pin IC48-28,Pin IC46-28,Pin IC52-31,Pin IC50-31,Pin IC48-31,Pin IC46-31,Pin IC52-32,Pin IC50-32,Pin IC48-32,Pin IC46-32,Pin IC52-49,Pin IC50-49,Pin IC48-49,Pin IC46-49,Pin IC52-65,Pin IC50-65,Pin IC48-65,Pin IC46-65,Pin IC35-A6,Pin IC35-A8,Pin IC35-A10,Pin IC35-A12,Pin IC35-A14,Pin IC35-A16,Pin IC35-A26,Pin IC35-AA6,Pin IC35-AA9,Pin IC35-AA14,Pin IC35-AA16,Pin IC35-AA26,Pin IC35-AB3,Pin IC35-AB8,Pin IC35-AB9,Pin IC35-AB10,Pin IC35-AB12,Pin IC35-AB14,Pin IC35-AB23,Pin IC35-AC7,Pin IC35-AC15,Pin IC35-AC20,Pin IC35-AD6,Pin IC35-AD9,Pin IC35-AD11,Pin IC35-AD13,Pin IC35-AD16,Pin IC35-AE4,Pin IC35-AE6,Pin IC35-AE15,Pin IC35-AE24,Pin IC35-AF1,Pin IC35-AF6,Pin IC35-AF8,Pin IC35-AF10,Pin IC35-AF12,Pin IC35-AF14,Pin IC35-AF16,Pin IC35-AF21,Pin IC35-B3,Pin IC35-B6,Pin IC35-B15,Pin IC35-B16,Pin IC35-B23,Pin IC35-C6,Pin IC35-C9,Pin IC35-C11,Pin IC35-C13,Pin IC35-C16,Pin IC35-C20,Pin IC35-D7,Pin IC35-D15,Pin IC35-D17,Pin IC35-E4,Pin IC35-E7,Pin IC35-E8,Pin IC35-E9,Pin IC35-E10,Pin IC35-E12,Pin IC35-E14,Pin IC35-E15,Pin IC35-E24,Pin IC35-F1,Pin IC35-F9,Pin IC35-F14,Pin IC35-F21,Pin IC35-G10,Pin IC35-G11,Pin IC35-G12,Pin IC35-G13,Pin IC35-G18,Pin IC35-H5,Pin IC35-H25,Pin IC35-J2,Pin IC35-J12,Pin IC35-J22,Pin IC35-K9,Pin IC35-K11,Pin IC35-K13,Pin IC35-K19,Pin IC35-L6,Pin IC35-L10,Pin IC35-L12,Pin IC35-L16,Pin IC35-L19,Pin IC35-L26,Pin IC35-M3,Pin IC35-M9,Pin IC35-M13,Pin IC35-M23,Pin IC35-N10,Pin IC35-N20,Pin IC35-P7,Pin IC35-P9,Pin IC35-P13,Pin IC35-P17,Pin IC35-R4,Pin IC35-R10,Pin IC35-R24,Pin IC35-T1,Pin IC35-T9,Pin IC35-T11,Pin IC35-T13,Pin IC35-T21,Pin IC35-U8,Pin IC35-U10,Pin IC35-U12,Pin IC35-U18,Pin IC35-V5,Pin IC35-V13,Pin IC35-V15,Pin IC35-V24,Pin IC35-V25,Pin IC35-W2,Pin IC35-W12,Pin IC35-W18,Pin IC35-W22,Pin IC35-Y10,Pin IC35-Y11,Pin IC35-Y12,Pin IC35-Y13,Pin IC35-Y19,Pin IC35-Y22)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">LMK1_CLK1 contains IO Pin and Output Pin objects (Pin IC35-W21)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">LMK1_CLK2 contains IO Pin and Output Pin objects (Pin IC35-R3)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">LMK2_CLK_LS contains IO Pin and Output Pin objects (Pin IC62-8)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net CDCM_SEC_REF_N has no driving source (Pin C789-2,Pin IC63-12,Pin XT1-3)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net CDCM_SEC_REF_P has no driving source (Pin C786-2,Pin IC63-11,Pin XT1-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_CFG_CCLK has no driving source (Pin IC36-6,Pin IC37-16,Pin R157-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_CFGBVS has no driving source (Pin IC35-AB15,Pin R170-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_JTAG_TCK has no driving source (Pin IC35-H12,Pin J14-6)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_JTAG_TDI has no driving source (Pin IC35-H10,Pin J14-10)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_JTAG_TMS has no driving source (Pin IC35-H11,Pin J14-4)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_M0 has no driving source (Pin IC35-AB7,Pin R161-2,Pin R164-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_M1 has no driving source (Pin IC35-Y9,Pin R162-2,Pin R165-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_M2 has no driving source (Pin IC35-W9,Pin R163-2,Pin R166-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net FPGA_PROGRAM_B has no driving source (Pin IC35-AE16,Pin R173-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net LMK1_CA1_N has no driving source (Pin C740-1,Pin IC58-28)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net LMK1_CA1_P has no driving source (Pin C742-1,Pin IC58-27)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net LMS1_TX1_OUT has no driving source (Pin C31-1,Pin IC14-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net LMS1_TX2_OUT has no driving source (Pin C37-1,Pin IC17-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_CLKC_N has no driving source (Pin C578-1,Pin IC46-26)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_CLKC_P has no driving source (Pin C577-1,Pin IC46-25)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_CTRL1 has no driving source (Pin IC46-35,Pin R290-1,Pin R291-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_CTRL2 has no driving source (Pin IC46-36,Pin R292-1,Pin R293-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_CTRL3 has no driving source (Pin IC46-37,Pin R294-1,Pin R295-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_INA_N has no driving source (Pin IC46-30,Pin R275-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_INA_P has no driving source (Pin IC46-29,Pin R279-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_INB_N has no driving source (Pin IC46-20,Pin R285-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC1_INB_P has no driving source (Pin IC46-19,Pin R289-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_CLKC_N has no driving source (Pin C608-1,Pin IC48-26)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_CLKC_P has no driving source (Pin C607-1,Pin IC48-25)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_CTRL1 has no driving source (Pin IC48-35,Pin R318-1,Pin R319-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_CTRL2 has no driving source (Pin IC48-36,Pin R320-1,Pin R321-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_CTRL3 has no driving source (Pin IC48-37,Pin R322-1,Pin R323-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_INA_N has no driving source (Pin IC48-30,Pin R303-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_INA_P has no driving source (Pin IC48-29,Pin R307-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_INB_N has no driving source (Pin IC48-20,Pin R313-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS2_BB_ADC2_INB_P has no driving source (Pin IC48-19,Pin R317-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_IC_RX1_BB_I_N has no driving source (Pin FL10-1,Pin R39-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_IC_RX1_BB_I_P has no driving source (Pin FL9-1,Pin R36-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_IC_RX1_BB_Q_N has no driving source (Pin FL12-1,Pin R42-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_IC_RX1_BB_Q_P has no driving source (Pin FL11-1,Pin R40-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_IC_RX2_BB_I_N has no driving source (Pin FL14-1,Pin R52-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_IC_RX2_BB_I_P has no driving source (Pin FL13-1,Pin R50-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_IC_RX2_BB_Q_N has no driving source (Pin FL16-1,Pin R54-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_IC_RX2_BB_Q_P has no driving source (Pin FL15-1,Pin R53-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">15_LMS2_RF1_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX1_1 has no driving source (Pin C52-1,Pin IC21-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX1_BB_I_N has no driving source (Pin FL2-1,Pin R256-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX1_BB_I_P has no driving source (Pin FL1-1,Pin R264-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX1_BB_Q_N has no driving source (Pin FL4-1,Pin R246-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX1_BB_Q_P has no driving source (Pin FL3-1,Pin R254-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">16_LMS2_RF2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX2_1 has no driving source (Pin C51-1,Pin IC29-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX2_BB_I_N has no driving source (Pin FL6-1,Pin R257-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX2_BB_I_P has no driving source (Pin FL5-1,Pin R265-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX2_BB_Q_N has no driving source (Pin FL8-1,Pin R247-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">06_LMS2_Misc.SchDoc</td>
+<td class="column3">Net LMS2_TX2_BB_Q_P has no driving source (Pin FL7-1,Pin R255-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_CLKC_N has no driving source (Pin C638-1,Pin IC50-26)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_CLKC_P has no driving source (Pin C637-1,Pin IC50-25)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_CTRL1 has no driving source (Pin IC50-35,Pin R346-1,Pin R347-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_CTRL2 has no driving source (Pin IC50-36,Pin R348-1,Pin R349-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_CTRL3 has no driving source (Pin IC50-37,Pin R350-1,Pin R351-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_INA_N has no driving source (Pin IC50-30,Pin R331-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_INA_P has no driving source (Pin IC50-29,Pin R335-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_INB_N has no driving source (Pin IC50-20,Pin R341-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC1_INB_P has no driving source (Pin IC50-19,Pin R345-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_CLKC_N has no driving source (Pin C668-1,Pin IC52-26)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_CLKC_P has no driving source (Pin C667-1,Pin IC52-25)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_CTRL1 has no driving source (Pin IC52-35,Pin R374-1,Pin R375-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_CTRL2 has no driving source (Pin IC52-36,Pin R376-1,Pin R377-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_CTRL3 has no driving source (Pin IC52-37,Pin R378-1,Pin R379-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_INA_N has no driving source (Pin IC52-30,Pin R359-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_INA_P has no driving source (Pin IC52-29,Pin R363-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_INB_N has no driving source (Pin IC52-20,Pin R369-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net LMS3_BB_ADC2_INB_P has no driving source (Pin IC52-19,Pin R373-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetC268_1 has no driving source (Pin C268-1,Pin IC14-5)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetC269_1 has no driving source (Pin C269-1,Pin IC14-13)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetC277_1 has no driving source (Pin C277-1,Pin IC15-2,Pin R116-2,Pin R118-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetC289_1 has no driving source (Pin C289-1,Pin IC17-5)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetC290_1 has no driving source (Pin C290-1,Pin IC17-13)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetC298_1 has no driving source (Pin C298-1,Pin IC18-2,Pin R128-2,Pin R130-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">15_LMS2_RF1_Misc.SchDoc</td>
+<td class="column3">Net NetC323_1 has no driving source (Pin C323-1,Pin IC25-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">16_LMS2_RF2_Misc.SchDoc</td>
+<td class="column3">Net NetC350_1 has no driving source (Pin C350-1,Pin IC33-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">22_LMS2_TX_BB_DACs.SchDoc</td>
+<td class="column3">Net NetC522_1 has no driving source (Pin C522-1,Pin IC44-37)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">22_LMS2_TX_BB_DACs.SchDoc</td>
+<td class="column3">Net NetC523_1 has no driving source (Pin C523-1,Pin IC45-37)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">22_LMS2_TX_BB_DACs.SchDoc</td>
+<td class="column3">Net NetC524_1 has no driving source (Pin C524-1,Pin IC44-38)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">22_LMS2_TX_BB_DACs.SchDoc</td>
+<td class="column3">Net NetC525_1 has no driving source (Pin C525-1,Pin IC45-38)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetC722_1 has no driving source (Pin C722-1,Pin IC55-21)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetC734_1 has no driving source (Pin C734-1,Pin IC58-13)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetC738_2 has no driving source (Pin C738-2,Pin IC58-14)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetC756_2 has no driving source (Pin C756-2,Pin XO6-7)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetC763_2 has no driving source (Pin C763-2,Pin C767-2,Pin IC59-1,Pin IC59-3,Pin R433-2,Pin R435-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net NetC788_1 has no driving source (Pin C788-1,Pin IC62-13)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net NetC790_2 has no driving source (Pin C790-2,Pin IC62-14)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net NetC792_1 has no driving source (Pin C792-1,Pin IC62-28)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net NetC793_2 has no driving source (Pin C793-2,Pin IC62-27)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net NetC804_1 has no driving source (Pin C804-1,Pin IC63-43)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC920_1 has no driving source (Pin C920-1,Pin IC73-2,Pin R549-1,Pin R552-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC921_1 has no driving source (Pin C921-1,Pin IC74-2,Pin R550-1,Pin R553-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC922_1 has no driving source (Pin C922-1,Pin IC75-2,Pin R551-1,Pin R554-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC923_2 has no driving source (Pin C923-2,Pin FR150-2,Pin IC76-5,Pin IC76-8)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC925_2 has no driving source (Pin C925-2,Pin FR151-2,Pin IC77-5,Pin IC77-8)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC927_2 has no driving source (Pin C927-2,Pin FR152-2,Pin IC78-5,Pin IC78-8)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC929_2 has no driving source (Pin C929-2,Pin FR153-2,Pin IC79-5,Pin IC79-8)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC931_2 has no driving source (Pin C931-2,Pin FR154-2,Pin IC80-5,Pin IC80-8)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC933_2 has no driving source (Pin C933-2,Pin FR155-2,Pin IC81-5,Pin IC81-8)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC937_2 has no driving source (Pin C937-2,Pin FR159-2,Pin IC82-5,Pin IC82-8)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC939_2 has no driving source (Pin C939-2,Pin FR160-2,Pin IC83-5,Pin IC83-8)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetC941_2 has no driving source (Pin C941-2,Pin FR162-2,Pin IC84-5,Pin IC84-8)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetIC14_8 has no driving source (Pin IC14-8,Pin L4-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetIC15_5 has no driving source (Pin IC15-5,Pin R119-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetIC15_6 has no driving source (Pin IC15-6,Pin R120-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetIC15_7 has no driving source (Pin IC15-7,Pin R121-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetIC17_8 has no driving source (Pin IC17-8,Pin L8-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetIC18_5 has no driving source (Pin IC18-5,Pin R131-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetIC18_6 has no driving source (Pin IC18-6,Pin R132-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">14_LMS1_RF_PA.SchDoc</td>
+<td class="column3">Net NetIC18_7 has no driving source (Pin IC18-7,Pin R133-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">15_LMS2_RF1_Misc.SchDoc</td>
+<td class="column3">Net NetIC25_1 has no driving source (Pin IC25-1,Pin R140-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">16_LMS2_RF2_Misc.SchDoc</td>
+<td class="column3">Net NetIC33_1 has no driving source (Pin IC33-1,Pin R151-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net NetIC35_A15 has no driving source (Pin IC35-A15,Pin R159-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net NetIC35_AF15 has no driving source (Pin IC35-AF15,Pin R156-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net NetIC35_N12 has no driving source (Pin IC35-N12,Pin R158-2,Pin R160-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">22_LMS2_TX_BB_DACs.SchDoc</td>
+<td class="column3">Net NetIC44_17 has no driving source (Pin IC44-17,Pin R266-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">22_LMS2_TX_BB_DACs.SchDoc</td>
+<td class="column3">Net NetIC44_39 has no driving source (Pin IC44-39,Pin R268-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">22_LMS2_TX_BB_DACs.SchDoc</td>
+<td class="column3">Net NetIC45_17 has no driving source (Pin IC45-17,Pin R267-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">22_LMS2_TX_BB_DACs.SchDoc</td>
+<td class="column3">Net NetIC45_39 has no driving source (Pin IC45-39,Pin R269-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC47_1 has no driving source (Pin IC47-1,Pin R270-1,Pin R277-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC47_6 has no driving source (Pin IC47-6,Pin R282-2,Pin R286-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC47_7 has no driving source (Pin IC47-7,Pin R281-1,Pin R287-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">23_LMS2_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC47_24 has no driving source (Pin IC47-24,Pin R272-2,Pin R276-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC49_1 has no driving source (Pin IC49-1,Pin R298-1,Pin R305-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC49_6 has no driving source (Pin IC49-6,Pin R310-2,Pin R314-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC49_7 has no driving source (Pin IC49-7,Pin R309-1,Pin R315-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">24_LMS2_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC49_24 has no driving source (Pin IC49-24,Pin R300-2,Pin R304-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC51_1 has no driving source (Pin IC51-1,Pin R326-1,Pin R333-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC51_6 has no driving source (Pin IC51-6,Pin R338-2,Pin R342-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC51_7 has no driving source (Pin IC51-7,Pin R337-1,Pin R343-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">25_LMS3_RX1_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC51_24 has no driving source (Pin IC51-24,Pin R328-2,Pin R332-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC53_1 has no driving source (Pin IC53-1,Pin R354-1,Pin R361-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC53_6 has no driving source (Pin IC53-6,Pin R366-2,Pin R370-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC53_7 has no driving source (Pin IC53-7,Pin R365-1,Pin R371-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">26_LMS3_RX2_BB_ADC.SchDoc</td>
+<td class="column3">Net NetIC53_24 has no driving source (Pin IC53-24,Pin R356-2,Pin R360-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC54_5 has no driving source (Pin IC54-5,Pin R390-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC54_6 has no driving source (Pin IC54-6,Pin R391-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC54_7 has no driving source (Pin IC54-7,Pin R393-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC55_10 has no driving source (Pin IC55-10,Pin R404-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC55_11 has no driving source (Pin IC55-11,Pin R405-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC55_12 has no driving source (Pin IC55-12,Pin R398-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC55_13 has no driving source (Pin IC55-13,Pin R401-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC55_14 has no driving source (Pin IC55-14,Pin R402-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC55_15 has no driving source (Pin IC55-15,Pin R403-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC55_25 has no driving source (Pin IC55-25,Pin R399-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC55_26 has no driving source (Pin IC55-26,Pin R400-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC57_5 has no driving source (Pin IC57-5,Pin R407-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC57_6 has no driving source (Pin IC57-6,Pin R409-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net NetIC57_7 has no driving source (Pin IC57-7,Pin R410-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetIC58_30 has no driving source (Pin IC58-30,Pin R420-2,Pin R423-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetIC58_31 has no driving source (Pin IC58-31,Pin R426-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetIC61_5 has no driving source (Pin IC61-5,Pin R455-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetIC61_6 has no driving source (Pin IC61-6,Pin R457-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net NetIC61_7 has no driving source (Pin IC61-7,Pin R458-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net NetIC62_30 has no driving source (Pin IC62-30,Pin R470-2,Pin R471-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net NetIC62_31 has no driving source (Pin IC62-31,Pin R474-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">29_Clocks2.SchDoc</td>
+<td class="column3">Net NetIC63_9 has no driving source (Pin IC63-9,Pin R463-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetIC73_1 has no driving source (Pin IC73-1,Pin R546-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetIC74_1 has no driving source (Pin IC74-1,Pin R547-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net NetIC75_1 has no driving source (Pin IC75-1,Pin R548-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_HSO0_N has no driving source (Pin IC35-C12,Pin P1-B15)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_HSO0_P has no driving source (Pin IC35-D12,Pin P1-B14)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_HSO1_N has no driving source (Pin IC35-A13,Pin P1-B20)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_HSO1_P has no driving source (Pin IC35-B13,Pin P1-B19)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_HSO2_N has no driving source (Pin IC35-C14,Pin P1-B24)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_HSO2_P has no driving source (Pin IC35-D14,Pin P1-B23)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_HSO3_N has no driving source (Pin IC35-A11,Pin P1-B28)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_HSO3_P has no driving source (Pin IC35-B11,Pin P1-B27)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_REFCLK_IC_N has no driving source (Pin C358-1,Pin IC35-E11)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net PCIE_REFCLK_IC_P has no driving source (Pin C357-1,Pin IC35-F11)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">Net PTP_XO_DAC_VREF has no driving source (Pin C718-2,Pin C719-1,Pin C720-1,Pin IC54-2,Pin IC57-2,Pin R389-1,Pin R392-2,Pin R394-1,Pin R395-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net TCXO_DAC_VREF has no driving source (Pin C784-2,Pin C785-1,Pin IC61-2,Pin R453-1,Pin R456-2,Pin R460-1,Pin R461-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">15_LMS2_RF1_Misc.SchDoc</td>
+<td class="column3">Net VCC5P0_RF1 has no driving source (Pin C261-2,Pin C282-2,Pin C908-2,Pin FR145-2,Pin IC13-1,Pin IC16-1,Pin R110-2,Pin R115-2,Pin R122-2,Pin R127-2,Pin R139-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">31_Power2.SchDoc</td>
+<td class="column3">Net VCC5P0 has no driving source (Pin C897-2,Pin C898-2,Pin C899-2,Pin C911-2,Pin C912-2,Pin C915-2,Pin FR145-1,Pin FR146-1,Pin FR162-1,Pin IC73-7,Pin IC74-7,Pin IC75-7,Pin L20-2,Pin R212-1,Pin R217-2,Pin R234-1,Pin R297-2,Pin R325-2,Pin R353-2,Pin R381-2,Pin R481-1,Pin R540-2,Pin R542-2,Pin TP13-1)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">15_LMS2_RF1_Misc.SchDoc</td>
+<td class="column3">Net VCC_LMS2_PA1 has no driving source (Pin C313-2,Pin C900-2,Pin FR143-2,Pin IC23-1,Pin R137-2)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">16_LMS2_RF2_Misc.SchDoc</td>
+<td class="column3">Net VCC_LMS2_PA2 has no driving source (Pin C340-2,Pin C902-2,Pin FR144-2,Pin IC31-1,Pin R148-2)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net WR_PTP_CLK0_125_IC_N has no driving source (Pin C356-1,Pin IC35-AB13)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">19_FPGA_misc.SchDoc</td>
+<td class="column3">Net WR_PTP_CLK0_125_IC_P has no driving source (Pin C355-1,Pin IC35-AA13)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">28_Clocks1.SchDoc</td>
+<td class="column3">Net XO_VC has no driving source (Pin R439-1,Pin R440-1,Pin R441-1,Pin XO3-1,Pin XO4-1,Pin XO5-1,Pin XO6-1,Pin XO7-1)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_CLK1_125_N contains IO Pin and Output Pin objects (Pin IC35-AC21)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_CLK1_125_P contains IO Pin and Output Pin objects (Pin IC35-AB21)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_CLK2_125_N contains IO Pin and Output Pin objects (Pin IC35-F4)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_CLK2_125_P contains IO Pin and Output Pin objects (Pin IC35-G4)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_CLK3_125_N contains IO Pin and Output Pin objects (Pin IC35-C4)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_CLK3_125_P contains IO Pin and Output Pin objects (Pin IC35-D4)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_SFP_LOS contains IO Pin and Output Pin objects (Pin J24-8,Pin IC35-T24)</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_SFP_MOD_DEF0 contains IO Pin and Output Pin objects (Pin J24-6,Pin IC35-K26)</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Warning</td>
+<td class="column2">27_WR_PTP.SchDoc</td>
+<td class="column3">WR_PTP_SFP_TX_FAULT contains IO Pin and Output Pin objects (Pin J24-2,Pin IC35-R16)</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

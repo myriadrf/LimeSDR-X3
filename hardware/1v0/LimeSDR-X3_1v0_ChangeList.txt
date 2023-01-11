@@ -1,0 +1,5 @@
+Changes:
+
+LimeSDR-X3_1v0(_DB)_DFMr(_INTERNAL):
+ - Initial database (created from PCIe_5GRadio_3v1(_DB)_DFMr6)
+ - HW version changed to 0, BOM version changed to 0 (R187 fitted)
