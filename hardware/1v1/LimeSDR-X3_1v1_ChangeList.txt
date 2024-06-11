@@ -1,0 +1,31 @@
+Changes:
+LimeSDR-X3_1v1(_DB)_DFMr1:
+ - Added 3 pcs. of spacers MECH20, MECH21, MECH22 to MECH2, MECH3, MECH4, MECH5 (TDYSFF-M3/10) for second fan;
+ - Added 8 pcs. of screws MECH23, MECH24, MECH25, MECH26, MECH27, MECH28 to MECH6, MECH7, MECH8, MECH9, MECH10, MECH11, MECH12, MECH13 (1003755) for second fan;
+ - Added 1 pcs. of header receptacle MECH29 to MECH14 (0014562021) for second fan;
+ - BOM updated;
+ - New schematic generated;
+ - Other PDF document names changed from r0 to r1;
+ - All other DFM files left unchanged.
+ 
+LimeSDR-X3_1v1(_DB)_DFMr0:
+ - Initial database (created LimeSDR-X3_1v0(_DB)_DFMr0)
+ - Added ability to disable LMS #1 internal LDO.
+ - Changed TX decoupling capacitors.
+ - Changed RF TX PAs. 
+ - Added ability to choose VVAs DACs Vref.
+ - Added common power filters for RF PA power rails.
+ - Changed HW_VER to [0 0 0 1].
+ - Changed 1,8V power rails voltage regulators.
+ - Changed 2,5 V voltage reference.
+
+LimeSDR-X3_1v0(_DB)_DFMr1:
+ - TPS22918 changed to TPS22917
+ - MN67, MN70, MN99, MN102  changed from 10nH to 30nH
+ - MN68, MN71, MN100, MN103 changed from 3.3nH to 13nH
+ - MN65, MN69, MN66, MN72, MN97, MN101, MN98, MN104 changed from 0.2pF to 0.3pF
+ - Schematic generated, BOM updated.
+ 
+LimeSDR-X3_1v0(_DB)_DFMr0:
+ - Initial database (created from PCIe_5GRadio_3v1(_DB)_DFMr6)
+ - HW version changed to 0, BOM version changed to 0 (R187 fitted)

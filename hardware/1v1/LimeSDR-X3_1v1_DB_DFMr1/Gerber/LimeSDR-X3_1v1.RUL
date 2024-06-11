@@ -1,0 +1,7 @@
+DRC Rules Export File for PCB: d:\LimePCBs\LimeSDR-X3\LimeSDR-X3_1v1\LimeSDR-X3\hardware\1v1\PCB\LimeSDR-X3_1v1.PcbDoc
+RuleKind=ShortCircuit|RuleName=ShortCircuit_IC40_PAD|Scope=Board|Allowed=1
+RuleKind=Width|RuleName=Width_ClumsyConnection|Scope=Board|Minimum=3.94
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=3.94
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=3.94
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=1.97
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
