@@ -1,7 +1,7 @@
 Changes:
 LimeSDR-X3_1v1(_DB)_DFMr1:
  - Added 3 pcs. of spacers MECH20, MECH21, MECH22 to MECH2, MECH3, MECH4, MECH5 (TDYSFF-M3/10) for second fan;
- - Added 8 pcs. of screws MECH23, MECH24, MECH25, MECH26, MECH27, MECH28 to MECH6, MECH7, MECH8, MECH9, MECH10, MECH11, MECH12, MECH13 (1003755) for second fan;
+ - Added 6 pcs. of screws MECH23, MECH24, MECH25, MECH26, MECH27, MECH28 to MECH6, MECH7, MECH8, MECH9, MECH10, MECH11, MECH12, MECH13 (1003755) for second fan;
  - Added 1 pcs. of header receptacle MECH29 to MECH14 (0014562021) for second fan;
  - BOM updated;
  - New schematic generated;
