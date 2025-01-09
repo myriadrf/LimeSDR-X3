@@ -752,23 +752,6 @@ GenerateClassCluster=0
 DocumentUniqueId=XWYGOMUO
 
 [Document43]
-DocumentPath=LimeMicroAltiumLib\LimeMicroAltiumLib.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document44]
 DocumentPath=LimeMicroAltiumLib\LimeMicroAltiumLib.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -785,7 +768,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=XNCKCINT
 
-[Document45]
+[Document44]
 DocumentPath=LimeSDR-X3_1v2.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -802,7 +785,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document46]
+[Document45]
 DocumentPath=PCB\LimeSDR-X3_1v2.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -817,7 +800,24 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=RDYIQCBY
+
+[Document46]
+DocumentPath=LimeMicroAltiumLib\LimeMicroAltiumLib.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=DQWHKEXV
 
 [Configuration1]
 Name=Default Configuration
