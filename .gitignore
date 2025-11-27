@@ -1,6 +1,19 @@
+# Python, Node.js and general
 _build
 venv/
+__pycache__
+node_modules/
+*.DS_Store
+Thumbs.db
+*.swp
+~*
+*~
+package-lock.json
+
+# Altium Designer 
 History/
 Schematics/__Previews
 __Previews
-/hardware/1v2/Project Logs for LimeSDR-X3_1v2
+*.$$$
+*.PrjPcb.Zip
+#*.log
