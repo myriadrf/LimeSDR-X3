@@ -16,7 +16,7 @@ The board is designed to be powered via a 6-pin PCIe connector (12 V), deliverin
 Cooling
 *******
 
-Depending on the application, host system and ambient temperature, additional cooling may be required to ensure reliable operation of the LimeSDR USB board. This may be in the form of airflow through the host system, or a dedicated heatsink fitted to the board.
+Depending on the application, host system and ambient temperature, additional cooling may be required to ensure reliable operation of the LimeSDR X3 board. This may be in the form of airflow through the host system, or a dedicated heatsink fitted to the board.
 
 The board provides mounting holes and connectors for two standard 60 mm, 12 V DC fans. The fans should be installed above the RF front end and the FPGA. For installation, we recommend using M3 screws with 25 mm M3 spacers. The RF front-end fan should be connected to header J16, and the FPGA fan to header J18.
 
