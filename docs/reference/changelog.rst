@@ -1,7 +1,7 @@
 Changelog
 #########
 
-The first production LimeSDR XTRX was revision v1.0 and so this changelog starts with changes from that point.
+The first production LimeSDR X3 was revision v1.0 and so this changelog starts with changes from that point.
 
 v1.2
 ****
